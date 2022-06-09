@@ -34,8 +34,10 @@ class Subcribers():
 
 class Observer(Subcribers):
   def getVS(self):
-    return self._valeurSurveille
-
+    try:
+      return self._valeurSurveille
+    except:
+      return "aucun abonnement"
 
 
 # init objet 
