@@ -9,6 +9,7 @@ class Publisher():
   def removeSubcribers(self,Subcribers):
     try:
       self._subcribers.remove(Subcribers)
+      Subcribers.update(None) 
     except:
       pass
       
@@ -30,7 +31,10 @@ class Observable(Publisher):
        
 class Subcribers():
   def update(self,publisher):
-    self._valeurSurveille = publisher.getVS()
+    if publisher==None:
+      del self._valeurSurveille
+    else:
+      self._valeurSurveille = publisher.getVS()
 
 class Observer(Subcribers):
   def getVS(self):
@@ -74,8 +78,10 @@ print("Observer2 = " ,Oer2.getVS())
 print("Observer3 = " ,Oer3.getVS())
 print("--------------")
 print(" set Observable2 = 3")
+print(" desabonnement de Observer2 ")
 print("--------------")
 Oable2.setVS(3)
+Oable2.removeSubcribers(Oer2)
 print("Observable1 = " , Oable1.getVS())
 print("Observer1 = " , Oer1.getVS())
 print("Observable2 = " , Oable2.getVS())
