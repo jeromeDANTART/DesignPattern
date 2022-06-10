@@ -12,8 +12,8 @@ class Publisher():
     
   def removeSubcriber(self,subcriber):
     try:
-      self._subcribers.remove(Subcriber)
-      subcriber._removeSubcribers(self)
+      self._subcribers.remove(subcriber)
+      subcriber._removePublisher(self)
     except:
       pass
 
