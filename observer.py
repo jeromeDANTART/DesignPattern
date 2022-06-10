@@ -5,9 +5,6 @@ class Publisher():
   def _notifySubcribers(self):
     for s in self._subcribers:
       s._update(self)
-
-  def _addSubcriber(self,subcriber):
-    self._subcribers.append(subcriber)
       
   def addSubcriber(self,subcriber):
     self._subcribers.append(subcriber)
@@ -16,7 +13,7 @@ class Publisher():
   def removeSubcriber(self,subcriber):
     try:
       self._subcribers.remove(Subcriber)
-      subcriber.removeSubcribers(self)
+      subcriber._removeSubcribers(self)
     except:
       pass
 
