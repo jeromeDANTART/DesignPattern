@@ -33,7 +33,7 @@ class Observable(Publisher):
   def getValue(self):
     return self._valeurSurveille
        
-class Subcribers():
+class Subcriber():
   def _initPublisher(self):
     self._publishers=[]
     self._values=[]
@@ -68,7 +68,7 @@ class Subcribers():
     publisher.removeSubcriber(self)
 
 
-class Observer(Subcribers):
+class Observer(Subcriber):
   def __init__(self):
     self._initPublisher()
     
