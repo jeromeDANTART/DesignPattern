@@ -67,7 +67,6 @@ class Subcriber():
   def unsubcripbeTo(self,publisher):
     publisher.removeSubcriber(self)
 
-
 class Observer(Subcriber):
   def __init__(self):
     self._initPublisher()
